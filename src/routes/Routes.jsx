@@ -2,9 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLaout from "../layout/MainLayout";
 import Error from "../pages/Error";
 // import ForgetPassword from "../pages/ForgetPassword";
+import ForgetPassword from "../pages/ForgetPasssword";
 import Home from "../pages/Home";
-// import Login from "../pages/Login";
-// import Register from "../pages/Register";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -127,18 +128,18 @@ const router = createBrowserRouter([
   //     ],
   //   },
 
-  //   {
-  //     path: "/login",
-  //     element: <Login></Login>,
-  //   },
-  //   {
-  //     path: "/register",
-  //     element: <Register></Register>,
-  //   },
-  //   {
-  //     path: "/forget-password",
-  //     element: <ForgetPassword></ForgetPassword>,
-  //   },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
+  },
+  {
+    path: "/forget-password",
+    element: <ForgetPassword></ForgetPassword>,
+  },
   //   {
   //     path: "/update-profile",
   //     element: <UpdateProfile></UpdateProfile>,

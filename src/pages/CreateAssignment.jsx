@@ -46,7 +46,7 @@ const CreateAssignment = () => {
           console.log("Successfully added");
           Swal.fire({
             title: "Success!",
-            text: "New Assignment added successfully",
+            text: "New Assignment Created successfully",
             icon: "success",
             confirmButtonText: "Ok",
           });

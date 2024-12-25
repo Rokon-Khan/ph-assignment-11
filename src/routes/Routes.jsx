@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLaout from "../layout/MainLayout";
 import Assignments from "../pages/Assignments";
 import CreateAssignment from "../pages/CreateAssignment";
+import DetailAssignment from "../pages/DetailAssignment";
 import Error from "../pages/Error";
 // import ForgetPassword from "../pages/ForgetPassword";
 import ForgetPassword from "../pages/ForgetPasssword";
@@ -18,12 +19,14 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        // loader: async () => await fetch("http://localhost:5000/addnewcampaign"),
-        // loader: async () => {
-        //   const response = await fetch("http://localhost:5000/addnewcampaign");
-        //   const data = await response.json();
-        //   return data;
-        // },
+
+        loader: async () => {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/allassignmnets`
+          );
+          const data = await response.json();
+          return data;
+        },
       },
     ],
   },
@@ -110,25 +113,27 @@ const router = createBrowserRouter([
   //       },
   //     ],
   //   },
-  //   {
-  //     path: "/detailcampaign",
-  //     element: <MainLaout></MainLaout>,
-  //     children: [
-  //       {
-  //         path: "/detailcampaign:id",
-  //         element: (
-  //           <PrivateRoute>
-  //             <DetailCampain></DetailCampain>,
-  //           </PrivateRoute>
-  //         ),
-  //         loader: async () => {
-  //           const response = await fetch("http://localhost:5000/addnewcampaign");
-  //           const data = await response.json();
-  //           return data;
-  //         },
-  //       },
-  //     ],
-  //   },
+  {
+    path: "/detailassignment",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/detailassignment:id",
+        element: (
+          // <PrivateRoute>
+          // </PrivateRoute>
+          <DetailAssignment></DetailAssignment>
+        ),
+        loader: async () => {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/allassignmnets`
+          );
+          const data = await response.json();
+          return data;
+        },
+      },
+    ],
+  },
   //   {
   //     path: "/addnewcampaign",
   //     element: <MainLaout></MainLaout>,

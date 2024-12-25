@@ -81,9 +81,9 @@ const Navbar = () => {
                       : "hover:text-green-500"
                   }`
                 }
-                to="/allcampaign"
+                to="/create-assignment"
               >
-                All Campaign
+                Create Assignment
               </NavLink>
 
               <NavLink
@@ -94,34 +94,9 @@ const Navbar = () => {
                       : "hover:text-green-500"
                   }`
                 }
-                to="/mycampaign"
+                to="/assignments"
               >
-                My Campaign
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `font-bold ${
-                    isActive
-                      ? "text-green-500  bg-white px-3 py-2 rounded-xl"
-                      : "hover:text-green-500"
-                  }`
-                }
-                to="/mydonation"
-              >
-                My Donation
-              </NavLink>
-              <NavLink
-                className={({ isActive }) =>
-                  `font-bold ${
-                    isActive
-                      ? "text-green-500  bg-white px-3 py-2 rounded-xl"
-                      : "hover:text-green-500"
-                  }`
-                }
-                to="/addnewcampaign"
-                // to={`/addcampaign/${user?.id}`}
-              >
-                Add New Campaign
+                Assignments
               </NavLink>
             </ul>
           </div>
@@ -129,7 +104,7 @@ const Navbar = () => {
             to="/"
             className="btn btn-ghost text-xl font-bold lg:flex hidden"
           >
-            Fund_Raiser
+            Assignment_Management
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -154,9 +129,9 @@ const Navbar = () => {
                     : "hover:text-green-500"
                 }`
               }
-              to="/allcampaign"
+              to="/create-assignment"
             >
-              All Campaign
+              Create Assignment
             </NavLink>
             <NavLink
               className={({ isActive }) =>
@@ -166,34 +141,9 @@ const Navbar = () => {
                     : "hover:text-green-500"
                 }`
               }
-              to="/mycampaign"
+              to="/assignments"
             >
-              My Campaign
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `font-bold ${
-                  isActive
-                    ? "text-green-500  bg-white px-3 py-2 rounded-xl"
-                    : "hover:text-green-500"
-                }`
-              }
-              to="/mydonation"
-            >
-              My Donation
-            </NavLink>
-            <NavLink
-              className={({ isActive }) =>
-                `font-bold ${
-                  isActive
-                    ? "text-green-500  bg-white px-3 py-2 rounded-xl"
-                    : "hover:text-green-500"
-                }`
-              }
-              to="/addnewcampaign"
-              // to={`/addcampaign/${user?.id}`}
-            >
-              Add New Campaign
+              Assignments
             </NavLink>
           </ul>
         </div>

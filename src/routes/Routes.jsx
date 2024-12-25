@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MyAttemptedAssignment from "../pages/MyAttemptedAssignment";
 import Register from "../pages/Register";
+import UpdateAssignment from "../pages/UpdateAssignment";
 
 const router = createBrowserRouter([
   {
@@ -80,39 +81,28 @@ const router = createBrowserRouter([
   //       },
   //     ],
   //   },
-  //   {
-  //     path: "/updateCampaign",
-  //     element: <MainLaout></MainLaout>,
-  //     children: [
-  //       {
-  //         path: "/updateCampaign/:id",
-  //         element: (
-  //           <PrivateRoute>
-  //             <UpdateCampaign />,
-  //           </PrivateRoute>
-  //         ),
-  //         loader: async () => {
-  //           const response = await fetch("http://localhost:5000/addnewcampaign");
-  //           const data = await response.json();
-  //           return data;
-  //         },
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     path: "/mydonation",
-  //     element: <MainLaout></MainLaout>,
-  //     children: [
-  //       {
-  //         path: "/mydonation",
-  //         element: (
-  //           <PrivateRoute>
-  //             <MyDonation></MyDonation>,
-  //           </PrivateRoute>
-  //         ),
-  //       },
-  //     ],
-  //   },
+  {
+    path: "/updateassignment",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/updateassignment/:id",
+        element: (
+          // <PrivateRoute>
+          // </PrivateRoute>
+          <UpdateAssignment />
+        ),
+        loader: async () => {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/allassignmnets`
+          );
+          const data = await response.json();
+          return data;
+        },
+      },
+    ],
+  },
+
   {
     path: "/detailassignment",
     element: <MainLaout></MainLaout>,

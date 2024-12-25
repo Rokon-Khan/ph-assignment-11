@@ -5,7 +5,7 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const DetailAssignment = () => {
   const data = useLoaderData();
-  console.log(data);
+  //   console.log(data);
 
   const { id } = useParams();
   const [campaigns, setCampaigns] = useState({});
@@ -15,7 +15,8 @@ const DetailAssignment = () => {
     const singleCampaign = data.find((campaign) => campaign._id == id);
     setCampaigns(singleCampaign);
   }, [data, id]);
-  const { assignmentTitle, photo, description, date, number } = campaigns || {};
+  const { assignmentTitle, photo, description, date, number, difficulty } =
+    campaigns || {};
   return (
     <div>
       <div className="hero max-w-[1020px] bg-base-200 mx-auto rounded-xl my-6">
@@ -38,6 +39,9 @@ const DetailAssignment = () => {
             </h1>
             <h1 className="text-2xl md:text-lg font-bold">
               Total Marks: {number}
+            </h1>
+            <h1 className="text-2xl md:text-lg font-bold">
+              Assignment Level: {difficulty}
             </h1>
 
             <h4 className="text-xl font-bold flex gap-2 justify-start items-center">

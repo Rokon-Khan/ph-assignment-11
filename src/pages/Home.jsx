@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import AssignmentCard from "../components/AssignmentCard";
+import Slider from "../components/Slider";
 
 const Home = () => {
   const data = useLoaderData();
@@ -13,6 +14,7 @@ const Home = () => {
   }, [data]);
   return (
     <div>
+      <Slider></Slider>
       <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-[1140px] mx-auto">
         {assignment.map((assignmentItem) => (
           <AssignmentCard

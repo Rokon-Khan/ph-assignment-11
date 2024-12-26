@@ -10,6 +10,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MyAttemptedAssignment from "../pages/MyAttemptedAssignment";
 import Register from "../pages/Register";
+import TakeAssignment from "../pages/TakeAssignment";
 import UpdateAssignment from "../pages/UpdateAssignment";
 
 const router = createBrowserRouter([
@@ -131,21 +132,21 @@ const router = createBrowserRouter([
       },
     ],
   },
-  //   {
-  //     path: "/addnewcampaign",
-  //     element: <MainLaout></MainLaout>,
-  //     children: [
-  //       {
-  //         path: "/addnewcampaign",
-  //         element: (
-  //           <PrivateRoute>
-  //             <AddNewCampaign></AddNewCampaign>,
-  //           </PrivateRoute>
-  //         ),
-  //         loader: () => fetch("http://localhost:5000/users"),
-  //       },
-  //     ],
-  //   },
+  {
+    path: "/takeassignment",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/takeassignment",
+        element: (
+          // <PrivateRoute>
+          // </PrivateRoute>
+          <TakeAssignment></TakeAssignment>
+        ),
+        // loader: () => fetch("http://localhost:5000/users"),
+      },
+    ],
+  },
 
   {
     path: "/login",

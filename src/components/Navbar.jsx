@@ -1,29 +1,3 @@
-// import { useContext } from "react";
-// import { Link } from "react-router-dom";
-// // import logo from "../assets/logo3.png";
-// import { AuthContext } from "../authprovider/AuthProvider";
-
-// const Navbar = () => {
-//   const { user, logOut } = useContext(AuthContext);
-
-//   const handleLogOut = () => {
-//     logOut().then().catch();
-//   };
-
-//   return (
-//     <div>
-//       <div className="navbar bg-base-100">
-//         <div className="flex-1">
-//           <Link className="btn btn-ghost text-xl">Assignment</Link>
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 // import logo from "../assets/logo3.png";
@@ -98,6 +72,18 @@ const Navbar = () => {
               >
                 Assignments
               </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `font-bold ${
+                    isActive
+                      ? "text-orange-500  bg-white px-3 py-2 rounded-xl"
+                      : "hover:text-orange-500"
+                  }`
+                }
+                to="/pendingassignment"
+              >
+                Pending Assignment
+              </NavLink>
             </ul>
           </div>
           <Link
@@ -121,7 +107,7 @@ const Navbar = () => {
             >
               Home
             </NavLink>
-            <NavLink
+            {/* <NavLink
               className={({ isActive }) =>
                 `font-bold ${
                   isActive
@@ -132,7 +118,7 @@ const Navbar = () => {
               to="/create-assignment"
             >
               Create Assignment
-            </NavLink>
+            </NavLink> */}
             <NavLink
               className={({ isActive }) =>
                 `font-bold ${
@@ -144,6 +130,18 @@ const Navbar = () => {
               to="/assignments"
             >
               Assignments
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive
+                    ? "text-orange-500  bg-white px-3 py-2 rounded-xl"
+                    : "hover:text-orange-500"
+                }`
+              }
+              to="/pendingassignment"
+            >
+              Pending Assignment
             </NavLink>
           </ul>
         </div>
@@ -181,7 +179,7 @@ const Navbar = () => {
                   </button>
                   <ul
                     tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2"
                   >
                     <li>
                       <a className="justify-between">
@@ -189,6 +187,22 @@ const Navbar = () => {
                           {user?.displayName}
                         </h3>
                       </a>
+                    </li>
+                    <li>
+                      <Link
+                        to="/create-assignment"
+                        className="btn bg-warning text-base text-white"
+                      >
+                        Create Assignment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/mysubmittedassinment"
+                        className="btn bg-warning text-base text-white"
+                      >
+                        My Submission
+                      </Link>
                     </li>
                   </ul>
                 </div>

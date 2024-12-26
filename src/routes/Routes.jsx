@@ -4,11 +4,12 @@ import Assignments from "../pages/Assignments";
 import CreateAssignment from "../pages/CreateAssignment";
 import DetailAssignment from "../pages/DetailAssignment";
 import Error from "../pages/Error";
-// import ForgetPassword from "../pages/ForgetPassword";
 import ForgetPassword from "../pages/ForgetPasssword";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MyAttemptedAssignment from "../pages/MyAttemptedAssignment";
+import MySubmittedAssignment from "../pages/MySubmittedAssignment";
+import PendingAssignment from "../pages/PendingAssignment";
 import Register from "../pages/Register";
 import TakeAssignment from "../pages/TakeAssignment";
 import UpdateAssignment from "../pages/UpdateAssignment";
@@ -138,6 +139,48 @@ const router = createBrowserRouter([
           return data;
         },
         // loader: () => fetch("http://localhost:5000/users"),
+      },
+    ],
+  },
+  {
+    path: "/mysubmittedassinment",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/mysubmittedassinment",
+        element: (
+          <PrivateRoute>
+            <MySubmittedAssignment></MySubmittedAssignment>
+          </PrivateRoute>
+        ),
+        loader: async () => {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/takeassignment`
+          );
+          const data = await response.json();
+          return data;
+        },
+      },
+    ],
+  },
+  {
+    path: "/pendingassignment",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/pendingassignment",
+        element: (
+          <PrivateRoute>
+            <PendingAssignment></PendingAssignment>
+          </PrivateRoute>
+        ),
+        loader: async () => {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/takeassignment`
+          );
+          const data = await response.json();
+          return data;
+        },
       },
     ],
   },

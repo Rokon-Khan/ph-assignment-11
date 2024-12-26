@@ -19,28 +19,39 @@ const TakeAssignment = () => {
     const singleCampaign = data.find((campaign) => campaign._id == id);
     setCampaigns(singleCampaign);
   }, [data, id]);
-  const { assignmentTitle, photo, description, date, number, difficulty } =
-    campaigns || {};
+  const {
+    assignmentTitle,
+    photo,
+    description,
+    date,
+    number,
+    email,
+    difficulty,
+  } = campaigns || {};
 
   const handleAddNewAssignment = (e) => {
     e.preventDefault();
 
-    const email = e.target.email.value;
+    const userName = e.target.userName.value;
+    const userEmail = e.target.userEmail.value;
     const feedback = e.target.feedback.value;
     const file = e.target.file.value;
-    const date = e.target.date.value;
+    const submissionDate = e.target.submissionDate.value;
 
     const assignmentSubmission = {
       feedback,
       email,
       file,
       date,
+      submissionDate,
       status: "Pending",
       assignmentTitle,
       photo,
       description,
       number,
       difficulty,
+      userEmail,
+      userName,
     };
 
     console.log(assignmentSubmission);
@@ -59,7 +70,7 @@ const TakeAssignment = () => {
           console.log("Successfully added");
           Swal.fire({
             title: "Success!",
-            text: "New Assignment Created successfully",
+            text: " Assignment Submitted successfully",
             icon: "success",
             confirmButtonText: "Ok",
           });
@@ -93,11 +104,25 @@ const TakeAssignment = () => {
           <div className="grid  grid-cols-1 gap-6">
             <div className="form-control">
               <label className="label">
+                <span className="label-text">Your Name</span>
+              </label>
+              <input
+                type="text"
+                name="userName"
+                defaultValue={user?.displayName}
+                readOnly
+                placeholder="Your Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
                 <span className="label-text">Your Email</span>
               </label>
               <input
                 type="Email"
-                name="email"
+                name="userEmail"
                 defaultValue={user?.email}
                 readOnly
                 placeholder="Your Email"
@@ -136,7 +161,7 @@ const TakeAssignment = () => {
               selected={startDate}
               onChange={(date) => setStartDate(date)}
               required
-              name="date"
+              name="submissionDate"
               placeholder="Assignment Submission Date"
               className="input input-bordered w-full"
             />

@@ -36,11 +36,11 @@ const Slider = () => {
                 </p>
 
                 <Link
-                  to="/allassignmnets"
+                  to="/assignments"
                   className="btn bg-orange-500 text-xl font-bold text-white"
                 >
                   Visit All Assignment
-                  <GoArrowUpRight className="text-3xl font-bold text-green-500 rounded-full bg-white" />
+                  <GoArrowUpRight className="text-3xl font-bold text-orange-500 rounded-full bg-white" />
                 </Link>
               </div>
             </div>
@@ -63,11 +63,11 @@ const Slider = () => {
                 </p>
 
                 <Link
-                  to="/allassignmnets"
+                  to="/assignments"
                   className="btn bg-orange-500 text-xl font-bold text-white"
                 >
-                  Visit All Campaign
-                  <GoArrowUpRight className="text-3xl font-bold text-green-500 rounded-full bg-white" />
+                  Visit All Assignment
+                  <GoArrowUpRight className="text-3xl font-bold text-orange-500 rounded-full bg-white" />
                 </Link>
               </div>
             </div>
@@ -90,11 +90,11 @@ const Slider = () => {
                 </p>
 
                 <Link
-                  to="/allassignmnets"
+                  to="/assignments"
                   className="btn bg-orange-500 text-xl font-bold text-white"
                 >
-                  Visit All Campaign
-                  <GoArrowUpRight className="text-3xl font-bold text-green-500 rounded-full bg-white" />
+                  Visit Assignment
+                  <GoArrowUpRight className="text-3xl font-bold text-orange-500 rounded-full bg-white" />
                 </Link>
               </div>
             </div>

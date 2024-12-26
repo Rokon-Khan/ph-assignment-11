@@ -5,6 +5,7 @@ import CreateAssignment from "../pages/CreateAssignment";
 import DetailAssignment from "../pages/DetailAssignment";
 import Error from "../pages/Error";
 import ForgetPassword from "../pages/ForgetPasssword";
+import GiveMark from "../pages/GiveMark";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import MyAttemptedAssignment from "../pages/MyAttemptedAssignment";
@@ -142,6 +143,55 @@ const router = createBrowserRouter([
       },
     ],
   },
+  // {
+  //   path: "/givemark",
+  //   element: <MainLaout></MainLaout>,
+  //   children: [
+  //     {
+  //       path: "/givemark:id",
+  //       element: (
+  //         <PrivateRoute>
+  //           <GiveMark></GiveMark>
+  //         </PrivateRoute>
+  //       ),
+  //       loader: async () => {
+  //         const response = await fetch(
+  //           `${import.meta.env.VITE_API_URL}/takeassignment`
+  //         );
+  //         const data = await response.json();
+  //         return data;
+  //       },
+  //       // loader: () => fetch("http://localhost:5000/users"),
+  //     },
+  //   ],
+  // },
+
+  {
+    path: "/givemark",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/givemark/:id", // Corrected path to include :id
+        element: (
+          <PrivateRoute>
+            <GiveMark></GiveMark>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          const { id } = params; // Extract the id from params
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/takeassignment/${id}` // Fetch specific assignment
+          );
+          if (!response.ok) {
+            throw new Error("Failed to fetch assignment");
+          }
+          const data = await response.json();
+          return data;
+        },
+      },
+    ],
+  },
+
   {
     path: "/mysubmittedassinment",
     element: <MainLaout></MainLaout>,

@@ -107,27 +107,27 @@ const Login = () => {
             <label className="label">
               <Link
                 to="/forget-password"
-                className="label-text-alt text-lg text-success link link-hover"
+                className="label-text-alt text-lg text-warning link link-hover"
               >
                 Forgot password?
               </Link>
             </label>
           </div>
           <div className="form-control mt-6">
-            <button className="btn btn-success text-xl text-white font-bold ">
+            <button className="btn btn-warning text-xl text-white font-bold ">
               Login
             </button>
           </div>
         </form>
         <button
           onClick={handleSigWithGoogle}
-          className="btn btn-full btn-success text-xl text-white font-bold my-4"
+          className="btn btn-full btn-warning text-xl text-white font-bold my-4"
         >
           Login With Google
         </button>
         <p className="text-center mt-4">
           Do not have an account{" "}
-          <Link className="text-green-600 font-bold" to="/register">
+          <Link className="text-orange-400 font-bold" to="/register">
             Register
           </Link>
         </p>

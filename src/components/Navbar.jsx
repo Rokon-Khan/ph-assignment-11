@@ -65,8 +65,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `font-bold ${
                     isActive
-                      ? "text-green-500 bg-white px-3 py-2 rounded-xl"
-                      : "hover:text-green-500"
+                      ? "text-orange-500 bg-white px-3 py-2 rounded-xl"
+                      : "hover:text-orange-500"
                   }`
                 }
                 to="/"
@@ -77,8 +77,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `font-bold ${
                     isActive
-                      ? "text-green-500 bg-white px-3 py-2 rounded-xl"
-                      : "hover:text-green-500"
+                      ? "text-orange-500 bg-white px-3 py-2 rounded-xl"
+                      : "hover:text-orange-500"
                   }`
                 }
                 to="/create-assignment"
@@ -90,8 +90,8 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   `font-bold ${
                     isActive
-                      ? "text-green-500  bg-white px-3 py-2 rounded-xl"
-                      : "hover:text-green-500"
+                      ? "text-orange-500  bg-white px-3 py-2 rounded-xl"
+                      : "hover:text-orange-500"
                   }`
                 }
                 to="/assignments"
@@ -113,8 +113,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `font-bold ${
                   isActive
-                    ? "text-green-500 bg-white px-3 py-2 rounded-xl"
-                    : "hover:text-green-500"
+                    ? "text-orange-500 bg-white px-3 py-2 rounded-xl"
+                    : "hover:text-orange-500"
                 }`
               }
               to="/"
@@ -125,8 +125,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `font-bold ${
                   isActive
-                    ? "text-green-500 bg-white px-3 py-2 rounded-xl"
-                    : "hover:text-green-500"
+                    ? "text-orange-500 bg-white px-3 py-2 rounded-xl"
+                    : "hover:text-orange-500"
                 }`
               }
               to="/create-assignment"
@@ -137,8 +137,8 @@ const Navbar = () => {
               className={({ isActive }) =>
                 `font-bold ${
                   isActive
-                    ? "text-green-500  bg-white px-3 py-2 rounded-xl"
-                    : "hover:text-green-500"
+                    ? "text-orange-500  bg-white px-3 py-2 rounded-xl"
+                    : "hover:text-orange-500"
                 }`
               }
               to="/assignments"
@@ -157,9 +157,9 @@ const Navbar = () => {
             </Link>
           </div> */}
           {user ? (
-            <div>
-              <div className="flex-none gap-2">
-                <div className="dropdown dropdown-end">
+            <div className="z-10">
+              <div className="flex-none gap-2 ">
+                <div className="dropdown dropdown-end ">
                   <div
                     tabIndex={0}
                     role="button"
@@ -175,7 +175,7 @@ const Navbar = () => {
                   </div>
                   <button
                     onClick={handleLogOut}
-                    className="btn bg-green-400 text-lg text-white font-bold"
+                    className="btn bg-orange-400 text-lg text-white font-bold"
                   >
                     Log Out
                   </button>
@@ -219,7 +219,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className="btn bg-green-400 text-xl text-white font-bold ">
+              <button className="btn bg-orange-400 text-xl text-white font-bold ">
                 Login
               </button>
             </Link>

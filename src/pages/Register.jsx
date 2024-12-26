@@ -265,22 +265,24 @@ const Register = () => {
             </p>
           </div>
           <div className="form-control mt-6 space-y-4">
-            <button className="btn btn-success text-xl text-white font-bold">
+            <button className="btn btn-warning text-xl text-white font-bold">
               Register
             </button>
           </div>
           {errorMessage && <p className="text-red-600">{errorMessage}</p>}
-          {success && <p className="text-green-600">Register is Successful.</p>}
+          {success && (
+            <p className="text-orange-500">Register is Successful.</p>
+          )}
         </form>
         <button
           onClick={handleSignWithGoogle}
-          className="btn btn-full btn-success text-xl text-white font-bold my-4"
+          className="btn btn-full btn-warning text-xl text-white font-bold my-4"
         >
           Register With Google
         </button>
         <p className="text-center mt-4">
           Already have an account?{" "}
-          <Link className="text-green-600 font-bold" to="/login">
+          <Link className="text-orange-500 font-bold" to="/login">
             Login
           </Link>
         </p>

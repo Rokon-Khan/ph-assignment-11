@@ -1,11 +1,26 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useLoaderData, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../authprovider/AuthProvider";
 const TakeAssignment = () => {
   const { user } = useContext(AuthContext);
   const [startDate, setStartDate] = useState(new Date());
+
+  const data = useLoaderData();
+  //   console.log(data);
+
+  const { id } = useParams();
+  const [campaigns, setCampaigns] = useState({});
+  console.log(campaigns);
+
+  useEffect(() => {
+    const singleCampaign = data.find((campaign) => campaign._id == id);
+    setCampaigns(singleCampaign);
+  }, [data, id]);
+  const { assignmentTitle, photo, description, date, number, difficulty } =
+    campaigns || {};
 
   const handleAddNewAssignment = (e) => {
     e.preventDefault();
@@ -21,6 +36,11 @@ const TakeAssignment = () => {
       file,
       date,
       status: "Pending",
+      assignmentTitle,
+      photo,
+      description,
+      number,
+      difficulty,
     };
 
     console.log(assignmentSubmission);

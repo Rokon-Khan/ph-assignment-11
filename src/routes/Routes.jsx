@@ -124,12 +124,19 @@ const router = createBrowserRouter([
     element: <MainLaout></MainLaout>,
     children: [
       {
-        path: "/takeassignment",
+        path: "/takeassignment:id",
         element: (
           <PrivateRoute>
             <TakeAssignment></TakeAssignment>
           </PrivateRoute>
         ),
+        loader: async () => {
+          const response = await fetch(
+            `${import.meta.env.VITE_API_URL}/allassignmnets`
+          );
+          const data = await response.json();
+          return data;
+        },
         // loader: () => fetch("http://localhost:5000/users"),
       },
     ],

@@ -18,14 +18,28 @@ const Home = () => {
     <div>
       <Slider></Slider>
       <Fetures></Fetures>
-      <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-[1140px] mx-auto">
+      {/* <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-[1140px] mx-auto">
         {assignment.map((assignmentItem) => (
           <AssignmentCard
             key={assignmentItem._id}
             assignmentItem={assignmentItem}
           />
         ))}
+      </div> */}
+      <div>
+        <h1 className="lg:text-4xl text-3xl font-bold text-center max-w-6xl mx-auto bg-slate-100 py-4 rounded-lg">
+          The Some Popular Assignment Ongoing
+        </h1>
+        <div className="grid lg:grid-cols-3 grid-cols-1 gap-10 max-w-[1140px] mx-auto lg:my-10 my-6">
+          {assignment.slice(0, 6).map((assignmentItem) => (
+            <AssignmentCard
+              key={assignmentItem._id}
+              assignmentItem={assignmentItem}
+            />
+          ))}
+        </div>
       </div>
+
       <FAQ></FAQ>
     </div>
   );

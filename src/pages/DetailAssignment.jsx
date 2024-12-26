@@ -15,7 +15,7 @@ const DetailAssignment = () => {
     const singleCampaign = data.find((campaign) => campaign._id == id);
     setCampaigns(singleCampaign);
   }, [data, id]);
-  const { assignmentTitle, photo, description, date, number, difficulty } =
+  const { _id, assignmentTitle, photo, description, date, number, difficulty } =
     campaigns || {};
   return (
     <div>
@@ -56,7 +56,7 @@ const DetailAssignment = () => {
             </h4>
             <div>
               <Link
-                to="/takeassignment"
+                to={`/takeassignment/${_id}`}
                 className="btn btn-warning text-lg font-bold text-white"
               >
                 Take Assignment

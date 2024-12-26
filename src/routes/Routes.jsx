@@ -12,6 +12,7 @@ import MyAttemptedAssignment from "../pages/MyAttemptedAssignment";
 import Register from "../pages/Register";
 import TakeAssignment from "../pages/TakeAssignment";
 import UpdateAssignment from "../pages/UpdateAssignment";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -56,7 +57,11 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/create-assignment",
-        element: <CreateAssignment></CreateAssignment>,
+        element: (
+          <PrivateRoute>
+            <CreateAssignment></CreateAssignment>
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -70,25 +75,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  //   {
-  //     path: "/mycampaign",
-  //     element: <MainLaout></MainLaout>,
-  //     children: [
-  //       {
-  //         path: "/mycampaign",
-  //         element: (
-  //           <PrivateRoute>
-  //             <MyCampaign></MyCampaign>,
-  //           </PrivateRoute>
-  //         ),
-  //         loader: async () => {
-  //           const response = await fetch("http://localhost:5000/addnewcampaign");
-  //           const data = await response.json();
-  //           return data;
-  //         },
-  //       },
-  //     ],
-  //   },
+
   {
     path: "/updateassignment",
     element: <MainLaout></MainLaout>,
@@ -96,9 +83,9 @@ const router = createBrowserRouter([
       {
         path: "/updateassignment/:id",
         element: (
-          // <PrivateRoute>
-          // </PrivateRoute>
-          <UpdateAssignment />
+          <PrivateRoute>
+            <UpdateAssignment />
+          </PrivateRoute>
         ),
         loader: async () => {
           const response = await fetch(
@@ -118,9 +105,9 @@ const router = createBrowserRouter([
       {
         path: "/detailassignment:id",
         element: (
-          // <PrivateRoute>
-          // </PrivateRoute>
-          <DetailAssignment></DetailAssignment>
+          <PrivateRoute>
+            <DetailAssignment></DetailAssignment>
+          </PrivateRoute>
         ),
         loader: async () => {
           const response = await fetch(
@@ -139,9 +126,9 @@ const router = createBrowserRouter([
       {
         path: "/takeassignment",
         element: (
-          // <PrivateRoute>
-          // </PrivateRoute>
-          <TakeAssignment></TakeAssignment>
+          <PrivateRoute>
+            <TakeAssignment></TakeAssignment>
+          </PrivateRoute>
         ),
         // loader: () => fetch("http://localhost:5000/users"),
       },

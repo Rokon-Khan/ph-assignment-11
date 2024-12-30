@@ -15,4 +15,7 @@ export default {
     },
   },
   plugins: [daisyui],
+  daisyui: {
+    themes: ["light", "dark"], // Add DaisyUI's default light and dark themes
+  },
 };

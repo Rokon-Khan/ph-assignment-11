@@ -2,6 +2,10 @@
 
 # https://ph-assignment-management-system.surge.sh/
 
+<div>
+  <img height="300" src="https://i.ibb.co.com/jfK1VPL/Ph-A-11-Assignment-Management.png" />
+</div>
+
 ## PH-Assignment-11 Assignment Management System With JWT
 - A strategic effort to manage public assignment contributions for a specific cause or initiative, often through events, online platforms, or community outreach. These assignment management aims to generate innovative ideas with different tech and education sectors. 
 
@@ -16,7 +20,9 @@
 **4. Efficient Assignment Management and Organization:** MongoDB's CRUD functionality (Create, Read, Update, Delete) allows for efficiently managing assignments, grades, and student progress. Teachers can easily create new assignments, review student submissions, update grades, and remove irrelevant records, while students can view their assigned tasks and track their completion status.
 
 **5. Scalable and Extensible Platform:** The use of MongoDB as the database, combined with JWT for authentication, creates a highly scalable and extensible system. This means that as the number of students or assignments increases, the system can easily handle more users and data without compromising performance, while also being adaptable to future features or changes in user requirements.
-
+<div>
+ <img  height="300" src="https://i.ibb.co.com/Sm8bRTH/Ph-A-11-Assignment-Management-1.png">
+</div>
 
 ## Key Features Assignment Management System Website
 - User Registration and Authentication

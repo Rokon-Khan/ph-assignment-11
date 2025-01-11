@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLaout from "../layout/MainLayout";
 import Assignments from "../pages/Assignments";
 import ContactUs from "../pages/ContactUs";
+import CookiePolicy from "../pages/CookiePolicy";
 import CreateAssignment from "../pages/CreateAssignment";
 import DetailAssignment from "../pages/DetailAssignment";
 import Error from "../pages/Error";
@@ -12,8 +13,10 @@ import Login from "../pages/Login";
 import MyAttemptedAssignment from "../pages/MyAttemptedAssignment";
 import MySubmittedAssignment from "../pages/MySubmittedAssignment";
 import PendingAssignment from "../pages/PendingAssignment";
+import PrivacyPolicy from "../pages/PrivacyPolicy";
 import Register from "../pages/Register";
 import TakeAssignment from "../pages/TakeAssignment";
+import TermsOfUse from "../pages/TermsOfUse";
 import UpdateAssignment from "../pages/UpdateAssignment";
 import PrivateRoute from "./PrivateRoute";
 
@@ -236,36 +239,36 @@ const router = createBrowserRouter([
     ],
   },
 
-  // {
-  //   path: "/terms-of-use",
-  //   element: <MainLaout></MainLaout>,
-  //   children: [
-  //     {
-  //       path: "/terms-of-use",
-  //       element: <TermsOfUse></TermsOfUse>,
-  //     },
-  //   ],
-  // },
-  // {
-  //   path: "/privacy-policy",
-  //   element: <MainLaout></MainLaout>,
-  //   children: [
-  //     {
-  //       path: "/privacy-policy",
-  //       element: <PrivacyPolicy></PrivacyPolicy>,
-  //     },
-  //   ],
-  // },
-  // {
-  //   path: "/cookie-policy",
-  //   element: <MainLaout></MainLaout>,
-  //   children: [
-  //     {
-  //       path: "/cookie-policy",
-  //       element: <CookiePolicy></CookiePolicy>,
-  //     },
-  //   ],
-  // },
+  {
+    path: "/terms-of-use",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/terms-of-use",
+        element: <TermsOfUse></TermsOfUse>,
+      },
+    ],
+  },
+  {
+    path: "/privacy-policy",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/privacy-policy",
+        element: <PrivacyPolicy></PrivacyPolicy>,
+      },
+    ],
+  },
+  {
+    path: "/cookie-policy",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/cookie-policy",
+        element: <CookiePolicy></CookiePolicy>,
+      },
+    ],
+  },
   {
     path: "/contact-us",
     element: <MainLaout></MainLaout>,

@@ -95,6 +95,18 @@ const Navbar = () => {
               >
                 Pending Assignment
               </NavLink>
+              <NavLink
+                className={({ isActive }) =>
+                  `font-bold ${
+                    isActive
+                      ? "text-green-500  bg-white px-3 py-2 rounded-xl"
+                      : "hover:text-green-500"
+                  }`
+                }
+                to="/contact-us"
+              >
+                Contact Us
+              </NavLink>
             </ul>
           </div>
           <Link
@@ -153,6 +165,19 @@ const Navbar = () => {
               to="/pendingassignment"
             >
               Pending Assignment
+            </NavLink>
+            <NavLink
+              className={({ isActive }) =>
+                `font-bold ${
+                  isActive
+                    ? "text-orange-500  bg-white px-3 py-2 rounded-xl"
+                    : "hover:text-orange-500"
+                }`
+              }
+              to="/contact-us"
+              // to={`/addcampaign/${user?.id}`}
+            >
+              Contact Us
             </NavLink>
           </ul>
         </div>
@@ -222,34 +247,36 @@ const Navbar = () => {
                   >
                     Log Out
                   </button>
-                  <ul
-                    tabIndex={0}
-                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2"
-                  >
-                    <li>
-                      <a className="justify-between">
-                        <h3 className="text-xl font-bold text-center text-gray-700">
-                          {user?.displayName}
-                        </h3>
-                      </a>
-                    </li>
-                    <li>
-                      <Link
-                        to="/create-assignment"
-                        className="btn bg-warning text-base text-white"
-                      >
-                        Create Assignment
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="/mysubmittedassinment"
-                        className="btn bg-warning text-base text-white"
-                      >
-                        My Submission
-                      </Link>
-                    </li>
-                  </ul>
+                  <div>
+                    <ul
+                      tabIndex={0}
+                      className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow space-y-2"
+                    >
+                      <li>
+                        <a className="justify-between">
+                          <h3 className="text-xl font-bold text-center text-gray-700">
+                            {user?.displayName}
+                          </h3>
+                        </a>
+                      </li>
+                      <li>
+                        <Link
+                          to="/create-assignment"
+                          className="btn bg-warning text-base text-white"
+                        >
+                          Create Assignment
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="/mysubmittedassinment"
+                          className="btn bg-warning text-base text-white"
+                        >
+                          My Submission
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               {/* <img

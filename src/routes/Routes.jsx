@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLaout from "../layout/MainLayout";
+import AboutUs from "../pages/AboutUs";
 import Assignments from "../pages/Assignments";
 import ContactUs from "../pages/ContactUs";
 import CookiePolicy from "../pages/CookiePolicy";
@@ -276,6 +277,16 @@ const router = createBrowserRouter([
       {
         path: "/contact-us",
         element: <ContactUs></ContactUs>,
+      },
+    ],
+  },
+  {
+    path: "/about-us",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/about-us",
+        element: <AboutUs></AboutUs>,
       },
     ],
   },

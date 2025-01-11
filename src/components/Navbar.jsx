@@ -22,7 +22,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className=" lg:px-10 lg:py-5 bg-base-200">
+    <div className=" lg:px-10 lg:py-5 sticky top-0 z-50 bg-base-200">
       <div className="navbar z-20 ">
         <div className="navbar-start">
           <div className="dropdown">

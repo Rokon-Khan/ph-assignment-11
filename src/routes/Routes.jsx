@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLaout from "../layout/MainLayout";
 import Assignments from "../pages/Assignments";
+import ContactUs from "../pages/ContactUs";
 import CreateAssignment from "../pages/CreateAssignment";
 import DetailAssignment from "../pages/DetailAssignment";
 import Error from "../pages/Error";
@@ -234,6 +235,57 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  // {
+  //   path: "/terms-of-use",
+  //   element: <MainLaout></MainLaout>,
+  //   children: [
+  //     {
+  //       path: "/terms-of-use",
+  //       element: <TermsOfUse></TermsOfUse>,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/privacy-policy",
+  //   element: <MainLaout></MainLaout>,
+  //   children: [
+  //     {
+  //       path: "/privacy-policy",
+  //       element: <PrivacyPolicy></PrivacyPolicy>,
+  //     },
+  //   ],
+  // },
+  // {
+  //   path: "/cookie-policy",
+  //   element: <MainLaout></MainLaout>,
+  //   children: [
+  //     {
+  //       path: "/cookie-policy",
+  //       element: <CookiePolicy></CookiePolicy>,
+  //     },
+  //   ],
+  // },
+  {
+    path: "/contact-us",
+    element: <MainLaout></MainLaout>,
+    children: [
+      {
+        path: "/contact-us",
+        element: <ContactUs></ContactUs>,
+      },
+    ],
+  },
+  // {
+  //   path: "/about-us",
+  //   element: <MainLaout></MainLaout>,
+  //   children: [
+  //     {
+  //       path: "/about-us",
+  //       element: <AboutUs></AboutUs>,
+  //     },
+  //   ],
+  // },
 
   {
     path: "/login",
